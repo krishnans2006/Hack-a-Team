@@ -1,0 +1,133 @@
+{% extends "base.html" %} {% block content %}
+<div id="title">
+	<h1>Hack-a-Team</h1>
+	<h3>Register</h3>
+</div>
+<div id="form">
+	<form method="POST" enctype="multipart/form-data">
+		<div class="row">
+			<div class="col col-md-6">
+				<div class="mb-3">
+					<label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname" required>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="mb-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="mb-3">
+                    <label for="resume" class="form-label">Resume</label>
+                    <input class="form-control" type="file" id="resume" name="resume" accept=".pdf,.docx,.txt,.md">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3">
+                <label for="bio" class="form-label">Bio</label>
+                <textarea class="form-control" id="bio" name="bio" maxlength=1000 rows="10" aria-describedby="bio-help" style="margin-bottom: 0 !important;"></textarea>
+                <div id="bio-help" class="form-text" style="margin-bottom: 0 !important;">Limited to 1000 Characters</div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <label for="socials" class="form-label">Socials</label>
+            <div class="col col-md-6">
+                <div class="input-group mb-3" style="margin-bottom: 0 !important;">
+                    <span class="input-group-text" id="github-logo"><i class="fab fa-github"></i></span>
+                    <input type="text" class="form-control" placeholder="YourUsername" aria-describedby="github-logo" id="github" name="github">
+                </div>
+                <div id="github-help" class="form-text" style="margin-bottom: 1rem !important;">https://github.com/<strong>YourUsername</strong></div>
+            </div>
+            <div class="col col-md-6">
+                <div class="input-group mb-3" style="margin-bottom: 0 !important;">
+                    <span class="input-group-text" id="linkedin-logo"><i class="fab fa-linkedin"></i></span>
+                    <input type="text" class="form-control" placeholder="your-username" aria-describedby="linkedin-logo" id="linkedin" name="linkedin">
+                </div>
+                <div id="linkedin-help" class="form-text" style="margin-bottom: 1rem !important;">https://linkedin.com/in/<strong>your-username</strong></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="input-group mb-3" style="margin-bottom: 0 !important;">
+                    <span class="input-group-text" id="devpost-logo"><span class="iconify" data-icon="simple-icons:devpost"></span></span>
+                    <input type="text" class="form-control" placeholder="yourusername" aria-describedby="devpost-logo" id="devpost" name="devpost">
+                </div>
+                <div id="linkedin-help" class="form-text" style="margin-bottom: 1rem !important;">https://devpost.com/<strong>yourusername</strong></div>
+            </div>
+            <div class="col col-md-6">
+                <div class="input-group mb-3" style="margin-bottom: 0 !important;">
+                    <span class="input-group-text" id="website-logo"><i class="fas fa-link"></i>&ensp;Website</span>
+                    <input type="text" class="form-control" placeholder="www.website.com" aria-describedby="website-logo" id="website" name="website">
+                </div>
+                <div id="website-help" class="form-text" style="margin-bottom: 1rem !important;">https://<strong>www.website.com</strong></div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <label for="links" class="form-label">Other Links</label>
+            <div class="col col-md-3">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Name" id="name1" name="name1">
+                </div>
+            </div>
+            <div class="col col-md-9">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Link" id="link1" name="link1">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-3">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Name" id="name2" name="name2">
+                </div>
+            </div>
+            <div class="col col-md-9">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Link" id="link2" name="link2">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-3">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Name" id="name3" name="name3">
+                </div>
+            </div>
+            <div class="col col-md-9">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Link" id="link3" name="link3">
+                </div>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success" id="submitbtn">Submit</button>
+    </form>
+</div>
+{% endblock content %}

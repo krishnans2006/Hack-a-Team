@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="title">
+    <h1>Hack-a-Team</h1>
+    <h3>Find Teammates</h3>
+</div>
+<div id="content">
+    <div id="masonrybs" class="row row-cols-1 row-cols-xl-4 row-cols-md-3 g-4" data-masonry='{"percentPosition": true }'>
+        {% for user in users %}
+        <div class="col acc-p">
+            <div class="card">
+                <div class="card-body">
+                    <a class="nolink" href="/profile/{{user['Email']}}">
+                        <h5 class="card-title">{{user["First Name"]}} {{user["Last Name"]}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{user["Email"]}}</h6>
+                        {% if user["Bio"]|length > 150 %}
+                        <p class="card-text">{{user["Bio"][:150]}}...</p>
+                        {% else %}
+                        <p class="card-text">{{user["Bio"]}}</p>
+                        {% endif %}
+                    </a>
+                    <br>
+                    <a href="https://github.com/{{user['Socials']['GitHub']}}" class="card-link" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/{{user['Socials']['LinkedIn']}}" class="card-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://devpost.com/{{user['Socials']['Devpost']}}" class="card-link" target="_blank"><span class="iconify" data-icon="simple-icons:devpost"></span></a>
+                    <a href="https://{{user['Socials']['Website']}}" class="card-link" target="_blank"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

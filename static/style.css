@@ -1,0 +1,44 @@
+.navbar-nav li {
+    cursor: pointer;
+}
+
+.container {
+    height: 100% !important;
+}
+
+#title * {
+    text-align: center;
+    height: 100%;
+}
+
+#form {
+    padding: 10px 15vw;
+}
+
+#submitbtn {
+    display: block;
+    margin: 0 auto;
+}
+
+.nolink {
+    text-decoration: none;
+    color: #212529;
+}
+
+.nolink:hover {
+    color: #212529; 
+    text-decoration: none;
+}
+
+.card-body a {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+i, .iconify {
+    color: #212529;
+}
+
+.whiteicon {
+    color: white;
+}

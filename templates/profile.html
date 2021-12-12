@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="title">
+    <h1>Hack-a-Team</h1>
+    <h3>User Profile</h3>
+</div>
+<div id="form">
+    <div class="card" style="width: 100%;">
+        <div class="card-body">
+            <h2 class="card-title">{{user["First Name"]}} {{user["Last Name"]}}</h2>
+            <h5 class="card-subtitle mb-2 text-muted">{{user["Email"]}} • {{user["Phone"]}}</h5>
+            <br>
+            <p class="card-text">{{user["Bio"]}}</p>
+            <a href="/resume/{{user['Email']}}" class="btn btn-success btn-lg card-link">Resume</a>
+            {% for name in names %}
+            {% if name == "" %}
+            {% else %}
+            <a href="{{user['Other Links'][name]}}" class="btn btn-secondary card-link" target="_blank">{{name}}</a>
+            {% endif %}
+            {% endfor %}
+            <br>
+            <a href="https://github.com/{{user['Socials']['GitHub']}}" class="btn btn-primary card-link" target="_blank"><i class="fab fa-github whiteicon"></i>&ensp;GitHub</a>
+            <a href="https://linkedin.com/in/{{user['Socials']['LinkedIn']}}" class="btn btn-primary card-link" target="_blank"><i class="fab fa-linkedin whiteicon"></i>&ensp;LinkedIn</a>
+            <a href="https://devpost.com/{{user['Socials']['Devpost']}}" class="btn btn-primary card-link" target="_blank"><span class="iconify whiteicon" data-icon="simple-icons:devpost"></span>&ensp;Devpost</a>
+            <a href="https://{{user['Socials']['Website']}}" class="btn btn-primary card-link" target="_blank"><i class="fas fa-link whiteicon"></i>&ensp;Website</a>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock content %}
